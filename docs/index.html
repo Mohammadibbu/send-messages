@@ -6,9 +6,6 @@
   <style >
     button{
       cursor: pointer;
-    }button:focus
-    {
-      cursor: wait;
     }
     h1{
       text-align: center;
@@ -18,7 +15,7 @@
       -webkit-background-clip:text;
       color: transparent;
     }
-     #btn1{
+#btn1{
   font-family: sans-serif;
   background-color: #25D366;
   padding: 6px 10px 6px 10px;
@@ -52,7 +49,7 @@
   </style>
    
 </head>
-<body style="text-align:center;">
+<body style="text-align:center;" onoffline="offline()" ononline="online()" onkeydown="load()">
 
   <h1 style="cursor: none;" title="hello,welcome">welcome</h1>
   <br>
@@ -60,13 +57,27 @@
 
   
   <label style="font-size: 15px;font-weight: bold;"><h1 style="font-size: 20px;cursor: none;">ENTER KNOWN / UNKNOWN PERSON MOBILE NO.</h1></label>
-  <input id="num" type="number" placeholder="eg.xxxxxxxxxx" minlength="10" maxlength="20" size="10" required autofocus>
+  <!-- country codes (ISO 3166) and Dial codes. -->
+<select name="countryCode" id="">
   
+    <option data-countryCode="IN" value="91">India (+91)</option>
+ 
+</select>
+  <input id="num" type="text" placeholder="eg.xxxxxxxxxx" maxlength="10" minlength="10" oninvalid="alert('You Must Fill')" required autofocus>
   <button id="btn1" onclick="temp()">ENTER</button>
   <p id=mess></p>
 
   <script >
     window.alert("This Work is not fully completed...")
+    function load(){
+        window.open("https://sites.google.com/view/ibbupython-programs-123/guess-the-number-coding","_blank");
+    }
+    function online(){
+      alert("Your browser is working online")
+    function offline(){
+      alert("please,check your network connection")
+    }
+    }
     function refresh(){
       location.reload();
     }
