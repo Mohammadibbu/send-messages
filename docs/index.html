@@ -7,6 +7,30 @@
     button{
       cursor: pointer;
     }
+    #i{
+      text-align: left;
+      color: red;
+      cursor: pointer;
+      position: relative;
+      animation: mymove 0.4s infinite;
+    }
+    @keyframes mymove{
+      from{right: :0px;}
+      to{left: 5px}
+    }
+    #i:hover{
+      color: green;
+      font-weight: bolder;
+      font-size: 17px;
+    }
+    #summary{
+      position: relative;
+      animation: mymoves 0.3s infinite;
+    }
+    @keyframes mymoves{
+      from{top: :0px;}
+      to{top: 3px}
+    }
     h1{
       text-align: center;
       font-size: 35px;
@@ -15,6 +39,20 @@
       -webkit-background-clip:text;
       color: transparent;
     }
+    #ib{
+      text-align: left;
+    }
+    #ib:hover{
+      font-weight: bold;
+    }
+    .change{
+      transition-duration: 0.3s;
+    }
+    .change:hover{
+      color: red;
+      font-size: 17px;
+    }
+    
 #btn1{
   font-family: sans-serif;
   background-color: #25D366;
@@ -67,7 +105,27 @@
   <button id="btn1" onclick="temp()">ENTER</button>
   <p id=mess></p>
 
+
   <script >
+    function prompt1(){
+      let text;
+      let person=prompt("Please enter your name :");
+      if (person==null||person=="")
+      {
+        text="";
+        
+        if (confirm("Please Enter Your  Name 😢")) {
+          prompt1();
+        }else{
+          alert("sorry, for the Trouble ! 🤞🤐");
+        }
+        
+      }else{
+        text="Hello  "+ person +"!  Thanks for using it❤💖😎";
+        alert(text);
+      }
+
+    }
     window.alert("This Work is not fully completed...")
     function online(){
       alert("Your browser is working online")
@@ -89,10 +147,7 @@
     }
    </script>
   <footer style="text-align: right;">
-  <details style="cursor: help;">
-    <summary><h1 style="font-size: 18px">WHAT IS THIS?</h1></summary>
-    <h1 style="font-size: 25px;">You can send a <em> WHATS APP </em>message to people you know or don't know.Without saving their number</h1>
-  </details>
+  
 </footer>
 <img src="https://www.seekpng.com/png/detail/940-9408213_refresh-icon-png-icon-png-refresh-button.png" width="20" height="20"><button onclick="refresh()" style="font-weight: bold;background-color: red">REFRESH</button>
 
@@ -103,9 +158,24 @@
     <a class="change" href="mailto:mohammmadibbu008@gmail.com" title="send your feedback" >feed back?</a>
 </section>
 
-<section style="text-align: left;cursor: none;">
-  <cite>ibbu©copyright2022</cite>
+<section id="ib">
+  <cite >ibbu©copyright2022</cite>
 </section>
     </footer>
+    <footer style="text-align: right;">
+      <div >
+        <br>
+        <br>
+        <details style="cursor: help;">
+    <summary><h1 style="font-size: 15px;" id="summary">WHAT IS THIS?</h1></summary>
+    <h1 style="font-size: 25px;">You can send a <em> WHATS APP </em>message to people you know or don't know.Without saving their number</h1>
+  </details>
+      </div>
+       
+    </footer>
+    <section id="i">
+       <i onclick="prompt1()">What's Your Name?☜ </i>
+    </section>
+   
 </body>
 </html>
