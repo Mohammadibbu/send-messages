@@ -56,16 +56,17 @@
     
 #btn1{
   font-family: sans-serif;
-  background-color: #25D366;
+  background-color: red;
   padding: 6px 10px 6px 10px;
   color: white;
   font-size: 20px;
   font-weight: bold; 
   text-align: center;
   transition-duration: 0.3s;
+  border-radius: 14px;
  }
 #btn1:hover{
-  background-color: red;
+  background-color: green;
   color: white;
   border-width: 3px;
 }
@@ -85,15 +86,31 @@
     padding: 8px 40px;
     border-color: #248f24;
   }
+  #message{
+    font-family: sans-serif;
+    border-width: 5px;
+    background-color:lightgreen;
+    padding: 5px 35px;
+    transition-duration: 1s;
+    font-size: 20px;
+    border-color: blue;
+    
+  }
+  #message:hover{
+    border-width: 5px;
+    background-color:lightyellow;
+    padding: 8px 40px;
+    border-color: #248f24;
+  }
   #countrycode{
     background-color: black;
-    color: red;
+    color: green;
     font-weight: bold;
     font-family: sans-serif;
     font-size: 20px;
   }
-  #countrycode:focus{
-    color: green;
+  #countrycode:hover{
+    color: red;
   }
   </style>
    
@@ -107,106 +124,27 @@
   <fieldset>
   <label style="font-size: 15px;font-weight: bold;"><h1 style="font-size: 20px;cursor: none;">ENTER KNOWN / UNKNOWN PERSON MOBILE NO.</h1></label>
   <!-- country codes (ISO 3166) and Dial codes. -->
+  <div>
 <select name="countryCode" id="countrycode">
-   <option data-countryCode="IN" value="91">India (+91)</option>
-  <optgroup label="Other countries">
-    <option data-countryCode="DZ" value="213">Algeria (+213)</option>
-    <option data-countryCode="AR" value="54">Argentina (+54)</option>
-    <option data-countryCode="AU" value="61">Australia (+61)</option>
-    <option data-countryCode="AT" value="43">Austria (+43)</option>
-  
-    <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
-    <option data-countryCode="BE" value="32">Belgium (+32)</option>
-    <option data-countryCode="BT" value="975">Bhutan (+975)</option>
-    
-    <option data-countryCode="BR" value="55">Brazil (+55)</option>
-    
-    <option data-countryCode="CA" value="1">Canada (+1)</option>
-    
-    <option data-countryCode="CN" value="86">China (+86)</option>
-    <option data-countryCode="CO" value="57">Colombia (+57)</option>
-    
-    <option data-countryCode="DK" value="45">Denmark (+45)</option>
-    <option data-countryCode="EG" value="20">Egypt (+20)</option>
-    
-    <option data-countryCode="FI" value="358">Finland (+358)</option>
-    <option data-countryCode="FR" value="33">France (+33)</option>
-    
-    <option data-countryCode="DE" value="49">Germany (+49)</option>
-    <option data-countryCode="GR" value="30">Greece (+30)</option>
-    <option data-countryCode="GL" value="299">Greenland (+299)</option>
-  
-    <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
-    <option data-countryCode="IS" value="354">Iceland (+354)</option>
-    <option data-countryCode="ID" value="62">Indonesia (+62)</option>
-    <option data-countryCode="IR" value="98">Iran (+98)</option>
-    <option data-countryCode="IQ" value="964">Iraq (+964)</option>
-    <option data-countryCode="IE" value="353">Ireland (+353)</option>
-    <option data-countryCode="IL" value="972">Israel (+972)</option>
-    <option data-countryCode="IT" value="39">Italy (+39)</option>
-    <option data-countryCode="JP" value="81">Japan (+81)</option>
-    
-    <option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
-    <option data-countryCode="KE" value="254">Kenya (+254)</option>
-    
-    <option data-countryCode="KP" value="850">Korea North (+850)</option>
-    <option data-countryCode="KR" value="82">Korea South (+82)</option>
-    <option data-countryCode="KW" value="965">Kuwait (+965)</option>
-    <option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
-    
-    <option data-countryCode="MY" value="60">Malaysia (+60)</option>
-    <option data-countryCode="MV" value="960">Maldives (+960)</option>
-    
-    <option data-countryCode="MX" value="52">Mexico (+52)</option>
-    
-    <option data-countryCode="NP" value="977">Nepal (+977)</option>
-    <option data-countryCode="NL" value="31">Netherlands (+31)</option>
-  
-    <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
-    
-    <option data-countryCode="NG" value="234">Nigeria (+234)</option>
-    <option data-countryCode="NO" value="47">Norway (+47)</option>
-    <option data-countryCode="OM" value="968">Oman (+968)</option>
-  
-    <option data-countryCode="PH" value="63">Philippines (+63)</option>
-    <option data-countryCode="PL" value="48">Poland (+48)</option>
-    
-    <option data-countryCode="RU" value="7">Russia (+7)</option>
-    
-    <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
-    
-    <option data-countryCode="SG" value="65">Singapore (+65)</option>
-    <option data-countryCode="ZA" value="27">South Africa (+27)</option>
-    <option data-countryCode="ES" value="34">Spain (+34)</option>
-    <option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
-    
-    <option data-countryCode="SE" value="46">Sweden (+46)</option>
-    <option data-countryCode="CH" value="41">Switzerland (+41)</option>
-    
-    <option data-countryCode="TJ" value="7">Tajikstan (+7)</option>
-    <option data-countryCode="TH" value="66">Thailand (+66)</option>
-    
-    <option data-countryCode="TR" value="90">Turkey (+90)</option>
-  
-    <option data-countryCode="GB" value="44">UK (+44)</option>
-    <option data-countryCode="UA" value="380">Ukraine (+380)</option>
-    <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
-    <option data-countryCode="US" value="1">USA (+1)</option>
-    <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
-    
-    <option data-countryCode="VN" value="84">Vietnam (+84)</option>
-    <option data-countryCode="ZM" value="260">Zambia (+260)</option>
-    <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
-  </optgroup>
+   <option data-countryCode="IN" value="91">India (+91)</option>   
 </select>
+</div>
+
 <!--country codes end-->
   <input id="num" type="text" placeholder="eg.xxxxxxxxxx" maxlength="10" minlength="10" oninvalid="alert('You Must Fill')" required autofocus>
+  <br>
+  <br>
+  <label style="font-size: 15px;font-weight: bold;"><h1 style="font-size: 20px;cursor: none;">TYPE ANY MESSAGEs !</h1></label>
+  <input type="text" id="message" placeholder="Type Here..."><br>
+  <hr>
+  <br>
   <button id="btn1" onclick="temp()">ENTER</button>
   <p id=mess></p>
 </fieldset>
 
   <script >
-
+    
+    
     function prompt1(){
       let text;
       let person=prompt("Please enter your name :");
@@ -229,35 +167,40 @@
     
     window.alert("This Work is not fully completed...")
     function online(){
-      alert("Your browser is working online")
+      alert("Your browser is working online");
+    }
     function offline(){
-      alert("please,check your network connection")
+      alert("please,check your network connection");
     }
-    }
+    
     function refresh(){
-      alert("refreshing the page 😊🤗")
+      alert("Refreshing the page....^_~")
       location.reload();
     }
     function temp() {
       // body...
     let temp=`<h1 style="font-size:30px;">Click this whatsapp icon! to send message to unknown/known person...</h1>
-    <a href="https://api.whatsapp.com/send/?phone=${countrycode.value}${num.value}&app_absent=0" target=_blank><img src="data:image/png;base64,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" alt="SEND MESSAGE" title="Whatsapp Link" style="width:80px;height:80px;"></a>
-    <h1 style="font-size:25px;font-weight:bolder;font-family:sans-serif;">Your Entered Mobile Number is: <a class="change" title="Whatsapp Link" href=https://api.whatsapp.com/send/?phone=${countrycode.value}${num.value}&app_absent=0>+${countrycode.value}  ${num.value}</a></h1>`;
+    <a href="https://api.whatsapp.com/send/?phone=${countrycode.value}${num.value}&text=${message.value}&app_absent=0" target=_blank><img src="data:image/png;base64,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" alt="SEND MESSAGE" title="Whatsapp Link" style="width:80px;height:80px;"></a>
+    <h1 style="font-size:25px;font-weight:bolder;font-family:sans-serif;">Your Entered Mobile Number is: <a class="change" title="Whatsapp Link" href=https://api.whatsapp.com/send/?phone=${countrycode.value}${num.value}&text=${message.value}&app_absent=0>+${countrycode.value}  ${num.value}</a></h1> <h1 style="font-size:25px;font-weight:bolder;font-family:sans-serif;">Your Entered message is:<span style=color:indigo;> ${message.value}</span></h1>`;
     document.getElementById("mess").innerHTML=(temp);
     console.log(mess);
     num.value='';
+    message.value='';
 
 
     }
    </script>
+  <footer style="text-align: right;">
+  
+</footer>
+<img src="https://www.seekpng.com/png/detail/940-9408213_refresh-icon-png-icon-png-refresh-button.png" width="20" height="20"><button onclick="refresh()" style="font-weight: bold;background-color: red;border-radius:4px;">REFRESH</button>
 
-
-<img src="https://www.seekpng.com/png/detail/940-9408213_refresh-icon-png-icon-png-refresh-button.png" width="20" height="20"><button onclick="refresh()" style="font-weight: bold;background-color: red">REFRESH</button>
-
+  <footer >
     <hr>
     <hr>
-<footer style="text-align: right;">
+     <footer style="text-align: right;">
       <div >
+        <br>
         <details style="cursor: help;">
     <summary><h1 style="font-size: 15px;" id="summary">WHAT IS THIS?</h1></summary>
     <h1 style="font-size: 25px;">You can send a <em> WHATS APP </em>message to people you know or don't know.Without saving their number</h1>
@@ -265,21 +208,20 @@
       </div>
        
     </footer>
-<br>
     <section id="i">
        <i onclick="prompt1()">What's Your Name?☜ </i>
     </section>
-<br>
-  <footer>
+    <br>
+    <br>
      <section style="text-align: right;">
     <a class="change" href="mailto:mohammmadibbu008@gmail.com" title="send your feedback" onclick="alert('Opening G-Mail or E-Mail...')">feed back?</a>
 </section>
-<br>
+
 <section id="ib">
   <cite >ibbu©copyright2022</cite>
 </section>
     </footer>
-    
+   
    
 </body>
 </html>
