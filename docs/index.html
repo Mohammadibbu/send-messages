@@ -112,11 +112,43 @@
   #countrycode:hover{
     color: red;
   }
+   #offline{
+        font-family: 'Tiro Tamil', serif;
+        display: none;
+        box-shadow: 0 0 2px 2px red;
+        margin-top: 5px;
+        width: auto;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        padding: 10px 8px;
+        background: darkred;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid #Ef9A9A;
+       }
+#online{
+      font-family: 'Tiro Tamil', serif;
+        display: none;
+        box-shadow: 0 0 2px 2px #37eb23;
+        margin-top: 5px;
+        width: auto;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        padding: 10px 8px;
+        background: green;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid #1e7d14;
+       }
   </style>
-   
+   <link href="https://fonts.googleapis.com/css2?family=Tiro+Tamil:ital@1&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="text-align:center;" onoffline="offline()" ononline="online()">
-
+<body style="text-align:center; font-family: 'Tiro Tamil', serif;" onoffline="offline()" ononline="online()" >
+  <div id="offline"><i class="fa fa-warning"></i>  No internet Connection !</div>
+<div id="online"><i class="fa fa-globe"></i>  Back Online !</div>
   <h1 style="cursor: none;" title="hello,welcome">welcome</h1>
   <br>
   <hr>
@@ -168,10 +200,26 @@
     
     window.alert("This Work is not fully completed...")
     function online(){
-      alert("🌐Back online...");
+      // alert("🌐Back online...");
+       //vibrate
+       navigator.vibrate([200,100,170]);
+
+      var online=document.getElementById('online');
+      var offline=document.getElementById('offline');
+      offline.style.display="none";
+      online.style.display="block";
+      setTimeout(()=>{online.style.display="none";},2000);
     }
+    //on offline
     function offline(){
-      alert("OOPS ! 😯\n Something Went Wrong!\nPlease,Check Your Network Connection....\n_ERR_004_CONN_");
+       //vibrate
+      navigator.vibrate([300,100,300,]);
+
+      // alert("OOPS ! 😯\n Something Went Wrong!\nPlease,Check Your Network Connection....\n_ERROR_CONNECTION_");
+       var online=document.getElementById('online');
+      var offline=document.getElementById('offline');
+      offline.style.display="block";
+
     }
     
     function refresh(){
